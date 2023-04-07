@@ -1,21 +1,21 @@
 import React, { createContext, useState } from "react";
 
-interface Auth {
+export interface Auth {
   email?: string;
   isLoggedIn?: boolean;
 }
 
-interface AuthContextProps {
+export interface AuthContextProps {
   auth: Auth;
   setAuth: React.Dispatch<React.SetStateAction<Auth>>;
   handleSetAuth: (auth: Auth ) => Auth;
   handleLogout: () => void;
-  children: React.ReactNode; // specify children prop as having type React.ReactNode
+  children?: React.ReactNode; // specify children prop as having type React.ReactNode
 }
 
 export const AuthContext = createContext({} as AuthContextProps);
 
-export const AuthProvider = ({ children }: AuthContextProps) => {
+export const AuthProvider = ({ children}: AuthContextProps) => {
   const [auth, setAuth] = useState<Auth>({});
 
   const handleSetAuth = (auth: Auth ) => {
