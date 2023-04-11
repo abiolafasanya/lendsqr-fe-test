@@ -7,6 +7,10 @@
     position: relative;;
     font-size: 14px;
     padding-top: 1rem;
+    @include mobile() {
+        width: 100%;
+        display: none;
+    }
     
     menu {
         color: $secondary;

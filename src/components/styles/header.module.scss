@@ -11,10 +11,16 @@
   top: 0;
   z-index: 10;
 
+  @include mobile() {
+    padding: 1rem;;
+  }
+
   box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
 
   .filter {
     position: relative;
+
+
   }
 
   .group {
@@ -32,6 +38,9 @@
 
   .searchArea {
     display: flex;
+    @include mobile() {
+      display: none;
+    }
     justify-content: space-between;
     input {
       border: none;
@@ -61,6 +70,9 @@
   }
 
   .menuArea {
+    @include mobile() {
+      display: none;
+    }
     ul {
       display: flex;
       align-items: center;

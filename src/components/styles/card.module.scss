@@ -10,6 +10,10 @@
      color: $primary;
      font-weight: 500;
      font-family: $work-sans;
+     @include mobile() {
+        width: 100%;
+        align-items: center;
+      }
 
      border: 1px solid #213f7d0f;
      box-shadow: 3px 5px 20px #0000000a;

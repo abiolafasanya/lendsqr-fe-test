@@ -5,7 +5,7 @@ import { IUser } from '../../utils/types';
 import { InfoCard } from '../../utils/MockData';
 import Card from '../../components/Card';
 import DataView from '../../components/DataView';
-import ContentLoader, { Facebook } from 'react-content-loader';
+import { Facebook } from 'react-content-loader';
 
 const Dashboard = () => {
   const [users, setUsers] = useState([{}] as IUser[]);
