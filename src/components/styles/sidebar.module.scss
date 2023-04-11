@@ -1,15 +1,14 @@
 @import '../../styles/main';
 
 .Sidebar {
-    min-width: 297;
+    min-width: 297px;
     width: 28%;
     background-color: $white;
     position: relative;;
     font-size: 14px;
     padding-top: 1rem;
     @include mobile() {
-        width: 100%;
-        display: none;
+        width: 300px;;
     }
     
     menu {

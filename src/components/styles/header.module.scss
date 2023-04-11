@@ -22,17 +22,39 @@
 
 
   }
+.bars {
+  display: none;
 
+  @include mobile() {
+    display: block;
+    font-size: 36px;
+  }
+}
   .group {
     display: flex;
     align-items: center;
     flex-direction: row;
     gap: 9rem;
+
+    @include mobile() {
+      gap: 1rem;
+      width: 100%;
+    }
   }
 
   .logo {
+    @include mobile() {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row-reverse;
+    }
     img {
       width: 90%;
+      @include mobile() {
+        width: 150px;
+      }
     }
   }
 

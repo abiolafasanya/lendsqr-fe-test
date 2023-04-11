@@ -3,13 +3,21 @@ import styles from './styles/header.module.scss';
 import Group from '../assets/Group.svg';
 import profile from '../assets/profile.svg';
 import { FaBell, FaCaretDown, FaSearch } from 'react-icons/fa';
+import { MdMenu } from 'react-icons/md';
+import useApp from '../hooks/useApp';
 
 const Header = () => {
+  const { setSidebar } = useApp();
   return (
     <div className={styles.Header}>
       <div className={styles.group}>
         <div className={styles.logo}>
           <img src={Group} alt="logo" />
+          <MdMenu
+            className={styles.bars}
+            onClick={() => setSidebar((b) => !b)}
+          />
+          {/* < className={styles.bars} /> */}
         </div>
         <div className={styles.searchArea}>
           <form>

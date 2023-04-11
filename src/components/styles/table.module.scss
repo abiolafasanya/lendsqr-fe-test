@@ -5,11 +5,18 @@
   color: $secondary;
   background-color: $white;
   padding: 0 1rem;
-  max-width: 100%;
   overflow-x: auto;
   border: 1px solid #213f7d0f;
   box-shadow: 3px 5px 20px #0000000a;
   border-radius: 4px;
+
+  @include mobile() {
+    width: 100%;
+    overflow-x: auto;
+
+
+  }
+
   table {
     border: none;
     text-align: justify;
@@ -18,6 +25,9 @@
     table-layout: fixed;
     width: 100%;
     font-size: 14px;
+@include mobile() {
+  table-layout: auto;
+}
   }
 
   thead {
@@ -45,7 +55,7 @@
         justify-content: center;
         align-items: center;
         position: relative;
-        
+       
         .space {
           margin-left: 40px;
           cursor: pointer;

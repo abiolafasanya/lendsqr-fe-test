@@ -4,6 +4,7 @@ import App from './App';
 import './styles/main.scss';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AuthContextProps, AuthProvider, Auth } from './context/AuthProvider';
+import { AppProvider } from './context/AppProvider';
 
 const auth: Auth = {}
 const authProviderProps: AuthContextProps = {
@@ -16,11 +17,13 @@ const authProviderProps: AuthContextProps = {
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
-    <AuthProvider {...authProviderProps}>
-      <Routes>
-        <Route path="/*" element={<App />} />
-      </Routes>
-    </AuthProvider>
+      <AuthProvider {...authProviderProps}>
+        <AppProvider>
+          <Routes>
+            <Route path="/*" element={<App />} />
+          </Routes>
+        </AppProvider>
+      </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
