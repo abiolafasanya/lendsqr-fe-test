@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { Dashboard, LandingPage, Login, Register } from './Routes';
+import { UserPage, LandingPage, Login } from './Routes';
 import './styles/main.scss';
-import Layout from './components/Layout';
 import Protected from './components/Protected';
+import React from 'react';
 
 function App() {
-  const [count, setCount] = useState(0);
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -17,20 +16,14 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
-        {/* Public Pages */}
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/login" element={<Login />} />
 
-      {/* Private Pages */}
       <Route element={<Protected />}>
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={<UserPage />} />
       </Route>
 
-        {/* Unknown Pages */}
-        <Route path="*" element={<LandingPage />} />
-      </Route>
+      <Route path="*" element={<Login />} />
     </Routes>
   );
 }

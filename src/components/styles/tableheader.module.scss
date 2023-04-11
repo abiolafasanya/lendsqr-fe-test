@@ -1,0 +1,11 @@
+@import '../../styles/main';
+
+.Header {
+  text-transform: uppercase;
+  padding: 1.5rem 0.5rem;
+  position: relative;
+  img {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+}

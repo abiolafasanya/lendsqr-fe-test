@@ -1,0 +1,27 @@
+@import '../../styles/main';
+
+.card {
+    background-color: $white;
+    padding: 1rem 2rem;
+    width: 200px;
+     display: flex;
+     flex-direction: column;
+     gap: .5rem;
+     color: $primary;
+     font-weight: 500;
+     font-family: $work-sans;
+
+     border: 1px solid #213f7d0f;
+     box-shadow: 3px 5px 20px #0000000a;
+     border-radius: 4px;
+
+     h4 {
+         font-weight: 600;
+         font-size: 12px;
+         text-transform: uppercase;
+         color: $secondary;
+     }
+    img {
+     width: 48px;
+    }
+ }

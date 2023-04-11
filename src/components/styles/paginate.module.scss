@@ -1,0 +1,57 @@
+@import '../../styles/main';
+
+.Paginate {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+
+  .info {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    font-size: 14px;
+    color: $fade;
+
+    select {
+      padding: 6px 15px;
+      background-color: rgba(33, 63, 125, 0.1);
+      border: none;
+
+      border-radius: 3px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -ms-border-radius: 3px;
+      -o-border-radius: 3px;
+
+      option {
+        border: none;
+        color: $primary;
+        border-radius: none;
+        -webkit-border-radius: none;
+        -moz-border-radius: none;
+        -ms-border-radius: none;
+        -o-border-radius: none;
+      }
+    }
+  }
+
+  .links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    cursor: pointer;
+    color: $fade;
+
+    font-size: 16px;
+    .current {
+    color: darken($color: #545F7D, $amount: 60);
+    }
+
+    .regular {
+        color: lighten($color: #545F7D, $amount: 20);
+        
+
+    }
+  }
+}

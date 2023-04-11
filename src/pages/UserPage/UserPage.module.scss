@@ -1,0 +1,22 @@
+@import '../../styles/main';
+
+.container {
+   min-height: 100vh;
+   height: 100%;
+   width: 100%;
+   position: relative;
+   padding: 2rem;
+
+   .title {
+    color: $primary;
+    font-size: 24px;
+    font-weight: 600;
+   }
+
+}
+.flexCard {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin: 2rem 0;
+}

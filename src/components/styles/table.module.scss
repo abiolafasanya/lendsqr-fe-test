@@ -1,0 +1,56 @@
+@import '../../styles/main';
+
+.table {
+  width: 100%;
+  color: $secondary;
+  background-color: $white;
+  padding: 0 1rem;
+  max-width: 100%;
+  overflow-x: auto;
+  border: 1px solid #213f7d0f;
+  box-shadow: 3px 5px 20px #0000000a;
+  border-radius: 4px;
+  table {
+    border: none;
+    text-align: justify;
+    border-collapse: collapse;
+    margin: auto;
+    table-layout: fixed;
+    width: 100%;
+    font-size: 14px;
+  }
+
+  thead {
+    tr {
+      width: 100%;
+    }
+  }
+  tbody {
+    tr {
+      border-bottom: 1px solid $border-color;
+      td {
+        padding: 1rem 0.3rem;
+        text-transform: capitalize;
+        text-overflow: clip;
+        white-space: nowrap;
+      }
+      .ellipsis {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: 1rem 0;
+        width: 250px;
+      }
+      .status {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        
+        .space {
+          margin-left: 40px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

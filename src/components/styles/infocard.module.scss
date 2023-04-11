@@ -1,0 +1,28 @@
+@import '../../styles/main';
+
+.card {
+  background-color: $white;
+  padding: 1rem;
+  background: #ffffff;
+  border: 1px solid rgba(84, 95, 125, 0.04);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  width: 180px;
+  position: absolute;
+  top: 0;
+  left: -2rem;
+  z-index: 10;
+  div {
+    padding: 1rem;
+    font-size: 14px;
+  }
+
+  .info {
+    display: flec;
+    align-items: center;
+
+    img {
+      margin-right: 15px;
+    }
+  }
+}
