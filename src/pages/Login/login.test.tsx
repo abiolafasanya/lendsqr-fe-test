@@ -1,12 +1,6 @@
 import React from 'react';
 import Login from './Index';
 import '@testing-library/jest-dom';
-import {
-  fireEvent,
-  getAllByTestId,
-  getByTestId,
-  screen,
-} from '@testing-library/dom';
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
