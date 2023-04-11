@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import UseAuth from '../../hooks/useAuth';
 import { mockCredentials } from '../../utils/MockData';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
@@ -6,6 +6,7 @@ import loginImage from '../../assets/login-image.svg';
 import styles from './login.module.scss';
 import logo from '../../assets/logo.svg';
 import { Helmet } from 'react-helmet';
+import { Facebook } from 'react-content-loader';
 
 type Auth = {
   email?: string;
@@ -19,6 +20,20 @@ const Login = () => {
   const location = useLocation();
   const passwordType = showPassword ? 'text' : 'password';
   const passwordText = showPassword ? 'Hide' : 'Show';
+  const to = location.pathname || '/dashboard';
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(true);
+    // setTimeout(() => {
+    //   if (!auth?.isLoggedIn) {
+    //     navigate('/dashboard', { replace: true });
+    //   }
+    // }, 1000);
+    () => {
+      return setLoading(false);
+    };
+  }, []);
 
   function handleLogin(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -39,13 +54,15 @@ const Login = () => {
   }
 
   return (
-    <>
-      {auth === null || !auth.isLoggedIn ? (
-        <div className={styles.Login}>
-          <Helmet>
-            <title>Login Page</title>
-            <meta name="description" content="Lendsqr Login Page" />
-          </Helmet>
+    <div className={styles.Login}>
+      <Helmet>
+        <title>Login Page</title>
+        <meta name="description" content="Lendsqr Login Page" />
+      </Helmet>
+      <>
+        {loading ? (
+          <Facebook />
+        ) : (
           <main className={styles.container}>
             <section className={styles.section1}>
               <div className={styles.header}>
@@ -100,11 +117,9 @@ const Login = () => {
               </form>
             </section>
           </main>
-        </div>
-      ) : (
-        <Navigate to={'/dashboard'} state={{ from: location }} replace  />
-      )}
-    </>
+        )}
+      </>
+    </div>
   );
 };
 

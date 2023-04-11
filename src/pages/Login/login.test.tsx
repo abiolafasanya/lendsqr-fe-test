@@ -5,12 +5,9 @@ import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
 describe('Test for Login Page', () => {
+
   it('should render login page', async () => {
-    render(
-      <MemoryRouter>
-        <Login />
-      </MemoryRouter>
-    );
+    render(<MemoryRouter>{<Login />}</MemoryRouter>);
   });
 
   it('should contain form element', async () => {

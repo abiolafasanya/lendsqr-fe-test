@@ -1,0 +1,96 @@
+@import '../../styles/main.scss';
+
+.Head {
+  background: $white;
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  margin-top: 3rem;
+  padding: 1rem  1rem  0 1rem;
+
+  .top {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+
+    .item1 {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: $primary;
+
+      p {
+        color: $secondary;
+        text-transform: uppercase;
+      }
+
+      img {
+        object-fit: cover;
+        object-position: center;
+        border-radius: 100px;
+      }
+    }
+
+    .item2 {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      color: $secondary;
+
+      h3 {
+        font-weight: 500;
+      }
+
+      .star {
+        display: flex;
+        gap: 0.5rem;
+      }
+    }
+
+    .item3 {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      color: $secondary;
+
+      h3 {
+        color: $primary;
+      }
+    }
+
+    .border {
+      background-color: lighten($color: $secondary, $amount: 40);
+      width: 0.05rem;
+      height: 100px;
+    }
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    bottom: 0;
+    padding-top: 1rem;
+
+    a {
+      color: $secondary;
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      text-align: center;
+      background-color: none;
+      border-radius: 0;
+      bottom: 0;
+      padding: 0 0 1rem 0;
+    }
+
+    .current {
+        color: $secondary2;
+        border-bottom: 2px solid $secondary2;
+    }
+
+  }
+}

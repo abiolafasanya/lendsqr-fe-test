@@ -7,6 +7,7 @@ import {
   userStatus,
 } from '../utils/formatter';
 import styles from './styles/table.module.scss';
+import "../styles/_pending.scss";
 import TableHeader from './TableHeader';
 import Info from './Info';
 
@@ -55,7 +56,7 @@ const Table = ({
                 >
                   {userStatus(data?.createdAt as string)}
                 </span>
-                <Info />
+                <Info id={data.id} />
               </td>
             </tr>
           ))}

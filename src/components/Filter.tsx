@@ -6,27 +6,27 @@ const Filter = () => {
     <div className={styles.Filter}>
       <div className={styles.card}>
         <form>
-          <div>
+          <div className={styles.formGroup}>
             <label htmlFor="organization">Organization</label>
             <input type="text" id="organization" itemID="organization" />
           </div>
-          <div>
+          <div className={styles.formGroup}>
             <label htmlFor="organization">Username</label>
             <input type="text" id="username" itemID="username" />
           </div>
-          <div>
+          <div className={styles.formGroup}>
             <label htmlFor="Email">Email</label>
             <input type="text" id="email" itemID="email" />
           </div>
-          <div>
-            <input type="datetime-local" id="date" itemID="date" />
+          <div className={styles.formGroup}>
             <label htmlFor="date">Date</label>
+            <input type="date" id="date" itemID="date" />
           </div>
-          <div>
+          <div className={styles.formGroup}>
             <label htmlFor="phoneNumber">Phone Number</label>
             <input type="text" id="phoneNumber" itemID="phoneNumber" />
           </div>
-          <div>
+          <div className={styles.formGroup}>
             <label htmlFor="status">Status</label>
             <select name="status" id="status">
               <option value="active">Active</option>
@@ -36,7 +36,7 @@ const Filter = () => {
             </select>
           </div>
           <div className={styles.groupBtn}>
-            <button className="btn-light">Reset</button>
+            <input type="reset" value="Reset" className='btn-light'/>
             <button className="btn-success">Filter</button>
           </div>
         </form>

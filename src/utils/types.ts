@@ -10,7 +10,7 @@ export interface IUser {
     accountNumber: string,
     profile?: profile,
     education?: education,
-    social?: socials,
+    socials?: socials,
     guarantor?: guarantor,
 };
 
@@ -65,4 +65,13 @@ export type user = {
   status: Status | string;
 }
 
-  const singleUser = 'https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users/:id '
+export type PersonalInfo = {
+  Fullname: string;
+  'Phone Number': string;
+  'Email Address': string;
+  BVN?: string;
+  Gender?: string;
+  'Marital Status': string;
+  Children: string;
+  'Type of Residence'?: string;
+};

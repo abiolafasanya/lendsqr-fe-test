@@ -1,0 +1,81 @@
+@import '../../styles/main';
+
+.container {
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  padding: 2rem;
+
+  .back {
+    display: flex;
+    gap: 1rem;
+    font-weight: 400;
+    font-size: 16px;
+    color: $secondary;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+  }
+
+  .head {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    // align-items: center;
+    h2 {
+      color: $primary;
+      font-weight: 500;
+      font-family: 'Work Sans';
+      font-style: normal;
+      padding: 0;
+    }
+    .btnGroup {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+
+      %status-shared {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 16px;
+        text-align: center;
+        padding: 0.5rem 1rem;
+        width: 180px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 8px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        -ms-border-radius: 8px;
+        -o-border-radius: 8px;
+      }
+
+      .dangerBtn {
+        @extend %status-shared;
+        border: 1px solid #e4033b;
+        color: #e4033b;
+
+        &:hover {
+            background-color: #e4033b;
+            color: set-text-color(#e4033b)
+        }
+      }
+
+      .infoBtn {
+        @extend %status-shared;
+        border: 1px solid #39cdcc;
+        color: #39cdcc;
+
+        &:hover {
+            background-color: #39cdcc;
+            color: set-text-color(#39cdcc);
+        }
+      }
+    }
+  }
+}

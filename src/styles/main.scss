@@ -28,47 +28,6 @@ body {
   text-align: center;
 }
 
-%status-shared {
-  font-family: 'Work Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 16px;
-  text-align: center;
-  padding: .5rem 1rem;
-  width: 150px;
-  border-radius:100px;
-  -webkit-border-radius:100px;
-  -moz-border-radius:100px;
-  -ms-border-radius:100px;
-  -o-border-radius:100px;
-}
-
-.pending {
-  @extend %status-shared;
-  background-color:  rgba(233, 178, 0, .1);;
-  color: #E9B200;
-}
-
-.active {
-  @extend %status-shared;
-  color: rgb(57, 205, 98);
-  background-color:  rgba(57, 205, 98, .1);
-  ;
-}
-
-.inactive {
-  @extend %status-shared;
-  background: rgba(84, 95, 125, .1);
-  color: #545F7D;
-}
-
-.blacklisted {
-  @extend %status-shared;
-  background-color: rgba(228, 3, 59, .1);
-  color: #E4033B;
-
-} 
 
 %btn-shared {
   display: inline-block;

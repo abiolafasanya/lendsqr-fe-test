@@ -1,0 +1,52 @@
+@import '../../styles/main.scss';
+
+.Tab {
+  background: $white;
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  margin-top: 3rem;
+  padding: 1rem;
+
+  .title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: $primary;
+  }
+
+  .row {
+    display: grid;
+    padding: 1rem 0;
+    gap: 5;
+    grid-template-columns: repeat(5, 1fr);
+
+    @include mobile() {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    @include tablet() {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .col {
+    display: flex;
+    flex-direction: column;
+    // gap: 0.5rem;
+    margin: 1rem 0;
+    h4 {
+      color: $secondary;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 14px;
+      text-transform: uppercase;
+      margin-bottom: .5rem;
+    }
+    h2 {
+      color: $primary;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+}

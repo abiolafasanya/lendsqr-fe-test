@@ -33,7 +33,7 @@ export const AuthProvider = ({ children }: AuthContextProps) => {
 
   const handleLogout = () => {
     localStorage.removeItem('auth');
-    setAuth({});
+    setAuth({ isLoggedIn: false });
   };
 
   return (

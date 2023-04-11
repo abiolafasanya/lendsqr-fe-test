@@ -5,9 +5,11 @@ import { IUser } from '../../utils/types';
 import { InfoCard } from '../../utils/MockData';
 import Card from '../../components/Card';
 import DataView from '../../components/DataView';
+import ContentLoader, { Facebook } from 'react-content-loader';
 
 const Dashboard = () => {
-  const [user, setUser] = useState([{}] as IUser[]);
+  const [users, setUsers] = useState([{}] as IUser[]);
+  const [loading, setLoading] = useState(true);
   const tableHeader = [
     'organization',
     'username',
@@ -16,8 +18,11 @@ const Dashboard = () => {
     'date',
     'status',
   ];
+
   useEffect(() => {
-    fetchUsers().then((users) => setUser(() => users));
+    fetchUsers()
+      .then((users) => setUsers(users))
+      .finally(() => setLoading(false));
   }, []);
 
   async function fetchUsers() {
@@ -39,15 +44,21 @@ const Dashboard = () => {
         <title>Dashboard</title>
         <meta name="description" content="Lendsqr Dashboard Page" />
       </Helmet>
-      <h2 className={styles.title}>Users</h2>
-      <section className={styles.flexCard}>
-        {InfoCard.map((data, id) => (
-          <Card data={data} key={id} />
-        ))}
-      </section>
-      <section>
-        <DataView tableData={user} tableHeader={tableHeader} />
-      </section>
+      {loading ? (
+        <Facebook />
+      ) : (
+        <>
+          <h2 className={styles.title}>Users</h2>
+          <section className={styles.flexCard}>
+            {InfoCard.map((data, id) => (
+              <Card data={data} key={id} />
+            ))}
+          </section>
+          <section>
+            <DataView tableData={users} tableHeader={tableHeader} />
+          </section>
+        </>
+      )}
     </div>
   );
 };

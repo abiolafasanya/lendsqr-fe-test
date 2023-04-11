@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { UserPage, LandingPage, Login } from './Routes';
+import { UserPage, User, LandingPage, Login } from './Routes';
 import './styles/main.scss';
 import Protected from './components/Protected';
 import React from 'react';
@@ -21,6 +21,8 @@ function App() {
 
       <Route element={<Protected />}>
         <Route path="/dashboard" element={<UserPage />} />
+        <Route path="/users" element={<UserPage />} />
+        <Route path="/user/:id" element={<User />} />
       </Route>
 
       <Route path="*" element={<Login />} />

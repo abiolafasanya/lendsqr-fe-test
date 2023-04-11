@@ -3,7 +3,6 @@
 .card {
   background-color: $white;
   padding: 1rem;
-  background: #ffffff;
   border: 1px solid rgba(84, 95, 125, 0.04);
   box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
@@ -23,6 +22,11 @@
 
     img {
       margin-right: 15px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
     }
   }
 }

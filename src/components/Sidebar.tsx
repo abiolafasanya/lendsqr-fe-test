@@ -1,9 +1,19 @@
 import React from 'react';
 import styles from './styles/sidebar.module.scss';
 import { menus } from '../utils/menuData';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { signout } from '../utils/images';
+import UseAuth from '../hooks/useAuth';
 
 const Sidebar = () => {
+  const { handleLogout } = UseAuth();
+  const navigate = useNavigate();
+
+  function handleSignout() {
+    handleLogout();
+    navigate('/login', { replace: true });
+  }
+
   return (
     <div className={styles.Sidebar}>
       <menu>
@@ -80,6 +90,13 @@ const Sidebar = () => {
             </li>
           </NavLink>
         ))}
+        <div className={styles.border}></div>
+        <li className={styles.signout} onClick={handleSignout}>
+          <img src={signout} alt="signout" />
+          <span>Logout</span>
+        </li>
+
+        <li className={styles.version}>v1.2.0</li>
       </menu>
     </div>
   );

@@ -19,6 +19,7 @@ import {
   caret,
   whitelisted,
   blacklisted,
+  tire,
 } from './images';
 
 export const menus = {
@@ -27,7 +28,7 @@ export const menus = {
   customer: {
     name: 'Customers',
     menu: [
-      { icon: user, name: 'Users', url: '/urser' },
+      { icon: user, name: 'Users', url: '/users' },
       { icon: userFriend, name: 'Guarantor', url: '/guarantor' },
       { icon: sack, name: 'Loans', url: '/loans' },
       { icon: handShake, name: 'Decision Models', url: '/decision-models' },
@@ -54,9 +55,12 @@ export const menus = {
   settings: {
     name: 'Settings',
     menu: [
-      { icons: slider, name: 'Preference', url: '/preference' },
+      { icon: slider, name: 'Preference', url: '/preference' },
       { icon: badge, name: 'Fees and Pricing', url: '/fees-pricing' },
       { icon: clipboard, name: 'Audits Logs', url: '/audits' },
+      {icon: tire, name: 'System Message', url: '/system-message',},
     ],
   },
+
+ 
 };

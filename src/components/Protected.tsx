@@ -20,7 +20,7 @@ const Protected = () => {
           </div>
         </div>
       ) : (
-        <Navigate to="/login" state={{ from: location }} replace />
+        <Navigate to={'/login'} state={{ from: location.pathname }} replace />
       )}
     </>
   );
