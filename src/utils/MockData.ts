@@ -1,4 +1,4 @@
-import { activeUser, user1, userWLoan, userWSaving, usersIcon } from "./images";
+import { activeUser, userWLoan, userWSaving, usersIcon } from "./images";
 
 export const mockCredentials = {
     email: 'test@example.com',
@@ -7,8 +7,8 @@ export const mockCredentials = {
 
 export const mockLogin = async () => {
     return {
-      userName: "recruiter@lendsqr.com",
-      password: "lendsQrRecruiter",
+      userName: "test@lendsqr.com",
+      password: "password",
     };
   };
 
