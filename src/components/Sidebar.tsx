@@ -34,10 +34,10 @@ const Sidebar = () => {
           <NavLink
             key={id}
             to={item.url}
-            className={({ isActive, isPending }) =>
-              isPending
-                ? styles.pending
-                : isActive
+            className={({ isActive }) =>
+              isActive
+                ? styles.active
+                : location.pathname == '/dashboard' && id == 0
                 ? styles.active
                 : styles.nothing
             }

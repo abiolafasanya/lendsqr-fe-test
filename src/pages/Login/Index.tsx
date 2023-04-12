@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import UseAuth from '../../hooks/useAuth';
-import { mockCredentials } from '../../utils/MockData';
 import { Link, useNavigate } from 'react-router-dom';
 import loginImage from '../../assets/login-image.svg';
 import styles from './login.module.scss';
 import logo from '../../assets/logo.svg';
 import { Helmet } from 'react-helmet';
+import { AlertMsg } from '../../components/Alert';
 
 type Auth = {
   email?: string;
@@ -18,14 +18,15 @@ const Login = () => {
   const navigate = useNavigate();
   const passwordType = showPassword ? 'text' : 'password';
   const passwordText = showPassword ? 'Hide' : 'Show';
-  const [loading, setLoading] = useState(true);
+  const [success, setSuccess] = useState(false);
+  const [error, setEror] = useState(false);
 
   useEffect(() => {
     if (auth?.isLoggedIn) {
       navigate('/dashboard', { replace: true });
     }
     () => {
-      return setLoading(false);
+      return;
     };
   }, []);
 
@@ -35,15 +36,24 @@ const Login = () => {
       email: { value: string };
       password: { value: string };
     };
-
-    if (
-      target.email.value === mockCredentials.email &&
-      target.password.value === mockCredentials.password
-    ) {
+    const cleanup = () => {
+      setTimeout(() => {
+        setEror(false);
+        setSuccess(false);
+      }, 1000);
+    };
+    if (target.email.value !== '' && target.password.value !== '') {
       const form: Auth = { isLoggedIn: true };
       const auth = handleSetAuth(form);
+      setEror(false);
+      setSuccess(true);
+      cleanup();
       auth.isLoggedIn && navigate('/dashboard', { replace: true });
+      return;
     }
+    setEror(true);
+    setSuccess(false);
+    cleanup();
     return;
   }
 
@@ -69,9 +79,11 @@ const Login = () => {
 
         <section className={styles.section2}>
           <div className={styles.info}>
-            <h2 data-testid="greeting">Welcome!</h2>
+            <h2 data-testid={'greeting'}>Welcome!</h2>
             <p data-testid="description">Enter details to login.</p>
           </div>
+          {success && <AlertMsg message={"login successful"} type={'success-alert'} />}
+          {error && <AlertMsg message={"login in failed"} type="error-alert" />}
           <form onSubmit={handleLogin} data-testid="form-element">
             <div className="form-group">
               <input

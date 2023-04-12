@@ -1,8 +1,9 @@
 @import '_var';
 @import '_func';
 
-
-*, ::before, ::after {
+*,
+::before,
+::after {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -21,13 +22,44 @@ body {
 }
 
 .flex {
-  display: flex;;
+  display: flex;
 }
 
 .center {
   text-align: center;
 }
 
+.success-alert {
+  background-color: lighten($color: $success, $amount: 45);
+  padding: 14px 16px;
+  border: 1px solid $success;
+  width: 90%;
+  max-width: 447px;
+  @include tablet() {
+    max-width: 360px;
+  }
+  @include mobile() {
+    max-width: 100%;
+  }
+  color: $success;
+  border-radius: 4px;
+}
+
+.error-alert {
+  background-color: lighten($color: $error, $amount: 45);
+  padding: 14px 16px;
+  border: 1px solid $error;
+  width: 90%;
+  max-width: 447px;
+  @include tablet() {
+    max-width: 360px;
+  }
+  @include mobile() {
+    max-width: 100%;
+  }
+  color: $error;
+  border-radius: 4px;
+}
 
 %btn-shared {
   display: inline-block;
@@ -77,7 +109,7 @@ body {
     background-color: $success;
     color: set-text-color($success);
   }
-  
+
   &-primary {
     @extend %btn-shared;
     background-color: $primary;
