@@ -49,4 +49,11 @@
       line-height: 19px;
     }
   }
+
+  .border {
+    width: 100%;
+    background-color: lighten($color: $secondary, $amount: 50);
+    height: 1px;
+    margin: 0 0 2rem 0;
+  }
 }

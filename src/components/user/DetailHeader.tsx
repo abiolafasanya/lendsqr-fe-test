@@ -43,7 +43,7 @@ const DetailHeader: React.FC<{ user: IUser }> = ({ user }) => {
         </div>
         <div className={styles.border} />
         <div className={styles.item3}>
-          <h3>{formatCurrency(parseInt(user.accountBalance))}</h3>
+          <h3>{formatCurrency(parseInt(user.accountBalance)*1000)}</h3>
           <p>
             <span>{user.accountNumber}</span> /<span>{user.orgName}</span>
           </p>

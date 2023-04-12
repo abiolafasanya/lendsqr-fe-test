@@ -15,16 +15,22 @@ const DetailTab: React.FC<{ user: IUser }> = ({ user }) => {
   const userSocials = social(user);
   const userGuantor= guarantor(user);
 
-  
+  const titles = {
+    personal: 'personal information',
+    eduWork: 'Education and Employment',
+    social: 'social',
+    guarantor: 'guarantor',
+  };
 
   return (
     <div className={styles.Tab}>
-      <DetailsRow title={'personal information'} data={personal} />
+      <DetailsRow title={titles.personal} data={personal} />
       <div className={styles.border} />
-      <DetailsRow title={'Education and Employment'} data={eduAndEmployment} />
+      <DetailsRow title={titles.eduWork} data={eduAndEmployment} />
       <div className={styles.border} />
-      <DetailsRow title={'social'} data={userSocials} />
-      <DetailsRow title={'guarantor'} data={userGuantor} />
+      <DetailsRow title={titles.social} data={userSocials} />
+        <div className={styles.border} />
+      <DetailsRow title={titles.guarantor} data={userGuantor} />
     </div>
   );
 };
