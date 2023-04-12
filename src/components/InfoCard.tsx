@@ -9,7 +9,7 @@ const InfoCard: React.FC<{id: string}> = ({id}) => {
       <Link to={`/user/${id}`}>
         <div className={styles.info}>
           <img src={eyes} alt="view" />
-          <span> View User</span>
+          <span> View Details</span>
         </div>
       </Link>
       <div className={styles.info}>
