@@ -1,0 +1,38 @@
+@import '../../styles/main';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+  margin: 150px auto;
+
+  h2 {
+    color: $secondary2;
+  }
+
+  h3 {
+    color: $secondary;
+  }
+
+  .submissionLink {
+    color: set-text-color($secondary2);
+    background-color: $secondary2;
+    padding: 16px 14px;
+    font-size: 18px;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+  }
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  margin: 10px;
+}
+
+}
