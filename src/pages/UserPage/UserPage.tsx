@@ -39,7 +39,7 @@ const Dashboard = () => {
   }
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-testid='userpage'>
       <Helmet>
         <title>Dashboard</title>
         <meta name="description" content="Lendsqr Dashboard Page" />

@@ -58,7 +58,7 @@ const Login = () => {
   }
 
   return (
-    <div className={styles.Login}>
+    <div className={styles.Login} data-testid={'login'}>
       <Helmet>
         <title>Login Page</title>
         <meta name="description" content="Lendsqr Login Page" />
@@ -115,7 +115,7 @@ const Login = () => {
               <Link to="#forgot-password" className={styles.forgot}>
                 Forgot Password
               </Link>
-              <button className="btn">LOG IN</button>
+              <button className="btn" data-testid='login-btn'>LOG IN</button>
             </div>
           </form>
         </section>

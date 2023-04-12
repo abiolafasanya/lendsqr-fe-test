@@ -4,7 +4,7 @@
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": false,
-    "skipLibCheck": true,
+    "skipLibCheck": false,
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
     "strict": true,
@@ -14,9 +14,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "types": ["jest", "@testing-library/jest-dom"],
-    "jsx": "react"
+    "jsx": "react-jsx"
   },
-  "include": ["src", "./jest-config.ts"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["./src"]
 }

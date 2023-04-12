@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react';
 import { useLocation, Navigate, Outlet } from 'react-router-dom';
 import UseAuth from '../hooks/useAuth';
 import Sidebar from './Sidebar';
@@ -6,12 +6,18 @@ import Header from './Header';
 import styles from './styles/protected.module.scss';
 import useApp from '../hooks/useApp';
 
-
 const Protected = () => {
   const { auth } = UseAuth();
   const location = useLocation();
   const { sidebar, setSidebar } = useApp();
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+  }, []);
 
   return (
     <>
@@ -32,4 +38,4 @@ const Protected = () => {
   );
 };
 
-export default Protected
+export default Protected;

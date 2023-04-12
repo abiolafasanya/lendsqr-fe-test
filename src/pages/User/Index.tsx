@@ -41,7 +41,7 @@ const Index = () => {
   }
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container}  data-testid='user-profile'>
       {loading ? (
         <Facebook />
       ) : (

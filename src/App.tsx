@@ -1,19 +1,10 @@
-import { useState, useEffect } from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { UserPage, User, LandingPage, Login } from './Routes';
 import './styles/main.scss';
 import Protected from './components/Protected';
-import React from 'react';
-import { AppProvider } from './context/AppProvider';
 
 function App() {
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth',
-    });
-  }, []);
 
   return (
     <Routes>

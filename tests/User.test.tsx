@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, cleanup, screen, act } from '@testing-library/react';
+import { render, cleanup } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import User from '../src/pages/User/Index';
@@ -19,7 +19,7 @@ describe('Test for User Profile Page', () => {
         <User />
       </MemoryRouter>
     );
-    const ancesstor =  getByTestId('user', { exact: true });
+    const ancesstor = getByTestId('user-profile', { exact: true });
     
     expect(ancesstor).toBeInTheDocument();
   });
