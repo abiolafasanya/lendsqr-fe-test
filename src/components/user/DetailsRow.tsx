@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from '../styles/detailtab.module.scss';
 import Detail from './Detail';
 
@@ -8,8 +8,6 @@ type rowProps = {
 };
 
 const DetailsRow = ({ data, title }: rowProps) => {
-  console.log('data form details row', data);
-  const [info, setInfo] = useState(data);
   return (
     <section>
       <h3 className={styles.title}>{title}</h3>

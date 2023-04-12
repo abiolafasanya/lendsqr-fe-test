@@ -6,7 +6,6 @@ const Detail: React.FC<{ item: string; itemKey: any }> = ({
   item,
   itemKey,
 }) => {
-  console.log(item, itemKey);
   return (
     <div className={styles.col}>
       <h4>{itemKey}</h4>

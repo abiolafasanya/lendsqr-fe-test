@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 
 
 const DetailHeader: React.FC<{ user: IUser }> = ({ user }) => {
-  console.log(user);
   const tabs = [
     'General Details',
     'Documents',
