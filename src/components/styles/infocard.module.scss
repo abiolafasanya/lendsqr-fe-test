@@ -9,7 +9,10 @@
   width: 180px;
   position: absolute;
   top: 0;
-  left: -2rem;
+  left: -3rem;
+  @include mobile() {
+    left: 1rem;
+  }
   z-index: 10;
   div {
     padding: 1rem;
@@ -17,9 +20,14 @@
   }
 
   .info {
-    display: flec;
+    display: flex;
     align-items: center;
+    justify-content: center;
 
+    &:hover {
+      background-color: $secondary2-light;
+      border-radius: 4px;
+    }
     img {
       margin-right: 15px;
     }

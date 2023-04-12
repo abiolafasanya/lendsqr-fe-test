@@ -1,9 +1,37 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styles from './styles/filter.module.scss';
 
-const Filter = () => {
+type filterType = {
+  setShowFilter: (bool: boolean) => void
+}
+
+const Filter = ({setShowFilter}: filterType) => {
+  const wrapperRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    function handleEscapeKey(event: any) {
+      if (event.keyCode === 27) {
+        setShowFilter(false);
+      }
+    }
+
+    function handleClickOutside(event: any) {
+      if (wrapperRef.current && !wrapperRef.current.contains(event?.target)) {
+        setShowFilter(false);
+      }
+    }
+
+    document.addEventListener('keydown', handleEscapeKey);
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('keydown', handleEscapeKey);
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [, wrapperRef]);
+
   return (
-    <div className={styles.Filter}>
+    <div className={styles.Filter} ref={wrapperRef}>
       <div className={styles.card}>
         <form>
           <div className={styles.formGroup}>

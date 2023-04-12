@@ -17,7 +17,7 @@ const TableHeader = ({ title }: headerType) => {
         alt="filter"
         onClick={() => setShowFilter((filter) => !filter)}
       />
-      {showFilter && <Filter />}
+      {showFilter && <Filter setShowFilter={setShowFilter} />}
     </th>
   );
 };

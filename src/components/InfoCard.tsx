@@ -13,7 +13,6 @@ const InfoCard: React.FC<{id: string}> = ({id}) => {
         <div className={styles.info}>
             <img src={blacklisted} alt="blacklist" />
             <span>Blacklist User</span>
-
         </div>
         <div className={styles.info}>
             <img src={activateUser} alt="activate" />
