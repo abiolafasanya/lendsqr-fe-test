@@ -32,8 +32,8 @@
   .col {
     display: flex;
     flex-direction: column;
-    // gap: 0.5rem;
     margin: 1rem 0;
+    white-space: nowrap;
     h4 {
       color: $secondary;
       font-weight: 400;

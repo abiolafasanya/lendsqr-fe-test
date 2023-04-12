@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from '../styles/detailtab.module.scss';
-import { IUser } from '../../utils/types';
 
 const Detail: React.FC<{ item: string; itemKey: any }> = ({
   item,

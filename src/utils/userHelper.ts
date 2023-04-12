@@ -23,11 +23,10 @@ export const educationAndEmployment = (user: IUser) => {
     'duration of employment': user.education?.duration,
     'office email': user.education?.officeEmail,
     'monthly income':
-      typeof user.education?.monthlyIncome !== undefined &&
-      formatCurrency(parseInt(user?.education?.monthlyIncome[0] as string)) +
+      user.education?.monthlyIncome !== undefined &&
+      formatCurrency(Number(user.education?.monthlyIncome[0]) * 1000) +
         ' - ' +
-        formatCurrency(parseInt(user?.education?.monthlyIncome[1] as string)),
-    'Loan repayment': parseInt(user?.education?.loanRepayment as string) * 100,
+        formatCurrency(Number(user.education?.monthlyIncome[1]) * 1000),
   };
   return data;
 };
