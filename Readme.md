@@ -1,7 +1,7 @@
 # LendSqr Assessments for frontend engineer
 
 ### Live Preview link
-[Netlify link to LendSqr Assessment](https://abiola-fasanya-lendsqr.netlify.app/)
+[Netlify link to LendSqr Assessment](https://abiola-fasanya-lendsqr-fe-test.netlify.app/)
 
 
 ## Documentation for the Login Component
