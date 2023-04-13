@@ -4,12 +4,10 @@ import UseAuth from '../hooks/useAuth';
 import Sidebar from './Sidebar';
 import Header from './Header';
 import styles from './styles/protected.module.scss';
-import useApp from '../hooks/useApp';
 
 const Protected = () => {
   const { auth } = UseAuth();
   const location = useLocation();
-  const { sidebar, setSidebar } = useApp();
 
   useEffect(() => {
     window.scrollTo({
@@ -25,9 +23,7 @@ const Protected = () => {
         <div className={styles.container}>
           <Header />
           <div className={styles.main}>
-            <div className={sidebar ? styles.mobileSidebar : styles.desktop}>
-              <Sidebar />
-            </div>
+            <Sidebar />
             <Outlet />
           </div>
         </div>
