@@ -1,4 +1,4 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, createContext, useEffect } from 'react';
 
 type AppContextType = {
     sidebar: boolean,
@@ -10,6 +10,18 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const [sidebar, setSidebar] = useState(false);
+
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerWidth < 768) {
+        setSidebar(false);
+      } else {
+        setSidebar(true);
+      }
+    }
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <AppContext.Provider value={{ sidebar, setSidebar }}>
       {children}
@@ -18,3 +30,4 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({
 };
 
 export default AppContext;
+

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styles from './styles/sidebar.module.scss';
 import { menus } from '../utils/menuData';
 import { NavLink, useNavigate } from 'react-router-dom';
@@ -8,20 +8,6 @@ import useApp from '../hooks/useApp';
 
 const Sidebar = () => {
   const { sidebar, setSidebar } = useApp();
-
-  useEffect(() => {
-    function handleResize() {
-      if (window.innerWidth < 768) {
-        setSidebar(false);
-      } else {
-        setSidebar(true);
-      }
-    }
-
-    window.addEventListener('resize', handleResize);
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   const { handleLogout } = UseAuth();
   const navigate = useNavigate();
